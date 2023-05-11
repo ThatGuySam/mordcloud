@@ -1,55 +1,61 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import path from 'path'
+import { fileURLToPath } from 'url'
+import { defineConfig } from 'astro/config'
+import tailwind from '@astrojs/tailwind'
 // import sitemap from '@astrojs/sitemap';
-import image from '@astrojs/image';
-import mdx from '@astrojs/mdx';
-import vue from '@astrojs/vue';
-import partytown from '@astrojs/partytown';
-import compress from 'astro-compress';
-import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
-import { SITE } from './src/config.mjs';
-import preact from "@astrojs/preact";
-const __vitedirname = path.dirname(fileURLToPath(import.meta.url));
-const whenExternalScripts = (items = []) => SITE.googleAnalyticsId ? Array.isArray(items) ? items.map(item => item()) : [items()] : [];
+import image from '@astrojs/image'
+import mdx from '@astrojs/mdx'
+import vue from '@astrojs/vue'
+import partytown from '@astrojs/partytown'
+import compress from 'astro-compress'
+import preact from '@astrojs/preact'
+import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs'
+import { SITE } from './src/config.mjs'
+const __vitedirname = path.dirname( fileURLToPath( import.meta.url ) )
+const whenExternalScripts = ( items = [] ) => SITE.googleAnalyticsId ? Array.isArray( items ) ? items.map( item => item() ) : [ items() ] : []
 
 // https://astro.build/config
-export default defineConfig({
-  site: SITE.origin,
-  base: SITE.basePathname,
-  trailingSlash: SITE.trailingSlash ? 'always' : 'never',
-  output: 'static',
-  markdown: {
-    remarkPlugins: [readingTimeRemarkPlugin]
-  },
-  integrations: [tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  }),
-  // sitemap(),
-  image({
-    serviceEntryPoint: '@astrojs/image/sharp'
-  }), mdx(), vue(), ...whenExternalScripts(() => partytown({
-    config: {
-      forward: ['dataLayer.push']
-    }
-  })), compress({
-    css: true,
-    html: {
-      removeAttributeQuotes: false
+export default defineConfig( {
+    site: SITE.origin,
+    base: SITE.basePathname,
+    trailingSlash: SITE.trailingSlash ? 'always' : 'never',
+    output: 'static',
+    markdown: {
+        remarkPlugins: [ readingTimeRemarkPlugin ],
     },
-    img: false,
-    js: true,
-    svg: false,
-    logger: 1
-  }), preact()],
-  vite: {
-    resolve: {
-      alias: {
-        '~': path.resolve(__vitedirname, './src')
-      }
-    }
-  }
-});
+    integrations: [
+        tailwind( {
+            config: {
+                applyBaseStyles: false,
+            },
+        } ),
+        // sitemap(),
+        image( {
+            serviceEntryPoint: '@astrojs/image/sharp',
+        } ), mdx(), vue(), ...whenExternalScripts( () => partytown( {
+            config: {
+                forward: [ 'dataLayer.push' ],
+            },
+        } ) ), compress( {
+            css: true,
+            html: {
+                removeAttributeQuotes: false,
+            },
+            img: false,
+            js: true,
+            svg: false,
+            logger: 1,
+        } ),
+        preact( {
+            // Enables more React compatibility
+            // compat: true,
+        } ),
+    ],
+    vite: {
+        resolve: {
+            alias: {
+                '~': path.resolve( __vitedirname, './src' ),
+            },
+        },
+    },
+} )
