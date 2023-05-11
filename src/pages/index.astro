@@ -1,0 +1,19 @@
+---
+import { SITE } from '~/config.mjs'
+import Layout from '~/layouts/PageLayout.astro'
+import Queries from '~/components/queries.vue'
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+    <div>
+        <Queries
+            client:load
+        />
+    </div>
+</Layout>
