@@ -1,6 +1,6 @@
 {
-  "name": "@onwidget/astrowind",
-  "description": "A template to make your website using Astro + Tailwind CSS.",
+  "name": "mordcloud",
+  "description": "Simple and free Word Cloud Generator. No accounts required. ",
   "version": "0.9.8",
   "private": true,
   "scripts": {
