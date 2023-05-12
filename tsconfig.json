@@ -4,6 +4,7 @@
     "moduleResolution": "nodenext",
     "strictNullChecks": true,
     "allowJs": true,
+    "types": ["node", "astro/client"],
     "baseUrl": ".",
     "paths": {
       "~/*": [
