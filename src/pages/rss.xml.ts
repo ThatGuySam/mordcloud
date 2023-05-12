@@ -1,6 +1,6 @@
 import rss from '@astrojs/rss'
 
-import { BLOG, SITE } from '~/config.mjs'
+import { BLOG, SITE } from '~/config.js'
 import { fetchPosts } from '~/utils/blog'
 import { getPermalink } from '~/utils/permalinks'
 
