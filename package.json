@@ -1,6 +1,7 @@
 {
   "name": "mordcloud",
   "description": "Simple and free Word Cloud Generator. No accounts required. ",
+  "type": "module",
   "version": "0.9.8",
   "private": true,
   "scripts": {
