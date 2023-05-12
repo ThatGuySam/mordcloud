@@ -15,7 +15,6 @@
  * The best solution is not the most complicated, it's the one
  * that is the easiest to understand and change.
  */
-
 module.exports = {
     env: {
         node: true,
@@ -27,31 +26,66 @@ module.exports = {
         'plugin:astro/recommended',
         '@antfu',
     ],
+    plugins: [
+        'react',
+    ],
     parserOptions: {
         ecmaVersion: 'esnext',
         sourceType: 'module',
     },
     rules: {
-    // Indent with 4 spaces
-        'indent': [ 'error', 4, {
-            SwitchCase: 1,
-        } ],
+        // Disable prettier
+        // https://antfu.me/posts/why-not-prettier
+        'prettier/prettier': 0,
+
+        // Indent with 4 spaces
+        'indent': [
+            'error',
+            4,
+            {
+                SwitchCase: 1,
+            },
+        ],
+
         'jsonc/indent': [ 'error', 4 ],
+
         'vue/html-indent': [ 'error', 4 ],
-        'vue/component-tags-order': [ 'error', {
-            order: [ 'template', 'script', 'style' ],
-        } ],
+
+        'vue/component-tags-order': [
+            'error',
+            {
+                order: [ 'template', 'script', 'style' ],
+            },
+        ],
+
         // Typescript Indent
         '@typescript-eslint/indent': [ 'error', 4 ],
+
         'space-in-parens': [ 'error', 'always' ],
+
         'space-before-function-paren': [ 'error', 'always' ],
+
         '@typescript-eslint/space-before-function-paren': [ 'error', 'always' ],
+
         'object-curly-spacing': [ 'error', 'always' ],
+
         'array-bracket-spacing': [ 'error', 'always' ],
+
+        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md
+        'react/jsx-curly-spacing': [ 2, 'always' ],
+
         'computed-property-spacing': [ 'error', 'always' ],
+
         'template-curly-spacing': [ 'error', 'always' ],
+
         // Enforce curly braces for all control statements
         'curly': [ 'error', 'all' ],
+
+        'quotes': [ 'error', 'single' ],
+
+        // Reenforce no semicolons
+        'semi': 'off',
+        '@typescript-eslint/semi': [ 'error', 'never' ],
     },
     overrides: [
         {
