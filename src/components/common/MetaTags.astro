@@ -55,13 +55,13 @@ const image
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <AstroSeo
-  title={title}
-  titleTemplate={dontUseTitleTemplate ? '%s' : `%s — ${ SITE.name }`}
-  description={description}
-  canonical={String( canonical )}
-  noindex={noindex}
-  nofollow={nofollow}
-  openGraph={{
+  title={ title }
+  titleTemplate={ dontUseTitleTemplate ? '%s' : `%s — ${ SITE.name }` }
+  description={ description }
+  canonical={ String( canonical ) }
+  noindex={ noindex }
+  nofollow={ nofollow }
+  openGraph={ {
     url: String( canonical ),
     title: ogTitle,
     description,
@@ -75,24 +75,24 @@ const image
         ]
       : undefined,
     // site_name: 'SiteName',
-  }}
-  twitter={{
+  } }
+  twitter={ {
     // handle: '@handle',
     // site: '@site',
     cardType: image ? 'summary_large_image' : undefined,
-  }}
+  } }
 />
 
 <CustomStyles />
 
 <!-- Google Site Verification -->
-{SITE.googleSiteVerificationId && <meta name="google-site-verification" content={SITE.googleSiteVerificationId} />}
+{SITE.googleSiteVerificationId && <meta name="google-site-verification" content={ SITE.googleSiteVerificationId } />}
 
 <!-- Google Analytics -->
-{SITE.googleAnalyticsId && <GoogleAnalytics id={String( SITE.googleAnalyticsId )} partytown={true} />}
+{SITE.googleAnalyticsId && <GoogleAnalytics id={ String( SITE.googleAnalyticsId ) } partytown={ true } />}
 
-{SITE.splitbeeAnalytics?.enabled && <SplitbeeAnalytics {...SITE.splitbeeAnalytics} />}
+{SITE.splitbeeAnalytics?.enabled && <SplitbeeAnalytics { ...SITE.splitbeeAnalytics } />}
 
-<link rel="shortcut icon" href={getAsset( '/favicon.ico' )} />
-<link rel="icon" type="image/svg+xml" href={getAsset( '/favicon.svg' )} />
-<link rel="mask-icon" href={getAsset( '/favicon.svg' )} color="#8D46E7" />
+<link rel="shortcut icon" href={ getAsset( '/favicon.ico' ) } />
+<link rel="icon" type="image/svg+xml" href={ getAsset( '/favicon.svg' ) } />
+<link rel="mask-icon" href={ getAsset( '/favicon.svg' ) } color="#8D46E7" />

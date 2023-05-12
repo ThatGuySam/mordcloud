@@ -97,7 +97,7 @@ export async function storeQuery ( query: StoredQueryOptions ): Promise<StoredQu
     return storedQuery
 }
 
-export async function watchQueries ( callback: ( queries: any ) => void ): Promise<ReturnType<typeof storage.watch>> {
+export async function watchQueries<T> ( callback: ( queries: T ) => void ): Promise<ReturnType<typeof storage.watch>> {
     const storage = await getStorage()
 
     // console.log( { callback } )

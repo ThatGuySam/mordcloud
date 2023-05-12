@@ -15,7 +15,7 @@ const meta = {
 <Layout {meta}>
   <Fragment slot="header">
     <Header
-      {...headerData}
+      { ...headerData }
       showRssFeed
       showToggleTheme
       position="left"
@@ -25,8 +25,8 @@ const meta = {
   <!-- Hero2 Widget ******************* -->
 
   <Hero
-    callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
-    callToAction2={{ text: 'Learn more', href: '#features' }}
+    callToAction={ { text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' } }
+    callToAction2={ { text: 'Learn more', href: '#features' } }
   >
     <Fragment slot="title">
       Free template for <span class="hidden lg:inline">create your website <br />with</span>
@@ -50,11 +50,11 @@ const meta = {
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
-    callToAction={{
+    callToAction={ {
       text: 'Get template',
       href: 'https://github.com/onwidget/astrowind',
       icon: 'tabler:download',
-    }}
+    } }
   >
     <Fragment slot="title">
       Astro + <br class="block sm:hidden" /><span class="sm:whitespace-nowrap"> Tailwind CSS</span>

@@ -14,8 +14,8 @@ const meta = {
   <Fragment slot="announcement"></Fragment>
   <Fragment slot="header">
     <Header
-      links={[]}
-      actions={[
+      links={ [] }
+      actions={ [
         {
           type: 'ghost',
           text: 'Login',
@@ -26,16 +26,16 @@ const meta = {
           text: 'Sign Up',
           href: '#',
         },
-      ]}
+      ] }
     />
   </Fragment>
 
   <!-- Hero2 Widget ******************* -->
 
   <Hero2
-    callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
-    callToAction2={{ text: 'Learn more', href: '#features' }}
-    image={{ src: import( '~/assets/images/hero.png' ), alt: 'Mord Cloud Hero Image' }}
+    callToAction={ { text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' } }
+    callToAction2={ { text: 'Learn more', href: '#features' } }
+    image={ { src: import( '~/assets/images/hero.png' ), alt: 'Mord Cloud Hero Image' } }
   >
     <Fragment slot="title">
       Free template for <span class="hidden lg:inline">create your website <br />with</span>
@@ -55,11 +55,11 @@ const meta = {
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
-    callToAction={{
+    callToAction={ {
       text: 'Get template',
       href: 'https://github.com/onwidget/astrowind',
       icon: 'tabler:download',
-    }}
+    } }
   >
     <Fragment slot="title">
       Astro + <br class="block sm:hidden" /><span class="sm:whitespace-nowrap"> Tailwind CSS</span>

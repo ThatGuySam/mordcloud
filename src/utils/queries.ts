@@ -127,6 +127,8 @@ export function buildQuery ( inputQueryParts: QueryPart[] ): string {
                 return true
             }
         }
+
+        return false
     } )
 
     // If we don't have any hr sites, let's add all of them

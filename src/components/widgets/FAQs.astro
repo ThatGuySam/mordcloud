@@ -29,16 +29,16 @@ const {
           {highlight && (
             <p
               class="text-base text-primary dark:text-blue-200 font-semibold tracking-wide uppercase"
-              set:html={highlight}
+              set:html={ highlight }
             />
           )}
           {title && (
             <h2
               class="max-w-lg mb-4 text-3xl font-bold leading-none md:tracking-tight sm:text-4xl md:mx-auto font-heading"
-              set:html={title}
+              set:html={ title }
             />
           )}
-          {subtitle && <p class="max-w-3xl mx-auto text-xl text-muted dark:text-slate-400" set:html={subtitle} />}
+          {subtitle && <p class="max-w-3xl mx-auto text-xl text-muted dark:text-slate-400" set:html={ subtitle } />}
         </div>
       )
     }
@@ -55,7 +55,7 @@ const {
                     <Icon name="tabler:arrow-down-right" class="w-7 h-7 text-primary inline-block" />
                     {question}
                   </h3>
-                  {answer && <div class="text-muted dark:text-gray-400" set:html={answer} />}
+                  {answer && <div class="text-muted dark:text-gray-400" set:html={ answer } />}
                 </div>
               ) )}
             </div>
